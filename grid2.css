@@ -5,8 +5,7 @@
         .container{
             display: grid;
             grid-auto-rows: minmax(100px, auto);
-            grid-auto-columns: 71px
-            grid-template-columns repeat(auto-fill, minmax(200px,1fr))
+            grid-template-columns: repeat(5,1fr);
         }
         .box{
             display: flex;
