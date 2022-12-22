@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid element</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) ;
+            grid-gap: 20px;
+            column-gap: 30px;
+            grid-auto-columns: minmax(100px, auto) ;
+            grid-auto-rows: minmax(100px, auto);
+            /* grid-auto-rows: 50px; makes the content overflow if it is more than the grid's */
+            
+
+            /*this option has the dimensions of the grid elements and 
+            
+            it can also be used as fr's which means it gives output wrt to all fractions
+            1fr 1fr 1fr or use repeat(3,1fr) which uses the operation to divide the following 
+            elements based on the total fractions on the page*/
+        }
+        .items{
+            border: 2px solid rgb(155, 135, 135);
+            border-radius: 5px;
+            text-align: center;
+            background-color: salmon;
+        }
+        #item1{
+            grid-row-start: 3;
+            grid-row-end: 4;
+            
+        }
+        #item2{
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+        .nest{
+            display: grid;
+            align-content: center;
+            grid-row-start: 2;
+            grid-row-end: 4;
+            grid-template-columns: repeat(3, 1fr);
+
+
+        }
+        .nests{
+            display: grid;
+            border: 3px solid rgb(200, 114, 28);
+            
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="items" id="item1">box 1</div>
+        <div class="items" id="item2">box 2</div>
+        <div class="items" id="item3">box3</div>
+        <div class="items nest" id="item4">
+        <div class="nests">nest1</div>
+        <div class="nests">nest2</div>
+        <div class="nests">nest3</div>
+    </div>
+        <div class="items" id="item5">box 5</div>
+        </div>
+</body>
+</html>
